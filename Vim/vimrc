@@ -1,0 +1,45 @@
+
+syntax on
+set background=dark
+
+
+if has("autocmd")
+  filetype plugin indent on
+endif
+
+" The following are commented out as they cause vim to behave a lot
+" differently from regular Vi. They are highly recommended though.
+
+set autoindent		" auto indentation
+set incsearch		" incremental search
+set nobackup		" no *~ backup files
+set copyindent		" copy the previous indentation on autoindenting
+set ignorecase		" ignore case when searching
+set smartcase		" ignore case if search pattern is all lowercase,case-sensitive otherwise
+set smarttab		" insert tabs on the start of a line according to context
+set mouse=a		" Enable mouse usage (all modes)
+
+
+set nocompatible	" not compatible with the old-fashion vi mode
+set bs=2		    " allow backspacing over everything in insert mode
+set history=50		" keep 50 lines of command line history
+set ruler		    " show the cursor position all the time
+set autoread		" auto read when file is changed from outside
+
+"set expandtab        "replace <TAB> with spaces
+set softtabstop=4 
+set shiftwidth=4 
+
+set laststatus=2
+set statusline=%<%f\ %m%=\ %h%r\ %-19([%p%%]\ %3l,%02c%03V%)%y
+highlight StatusLine term=bold,reverse cterm=bold,reverse
+
+" Source a global configuration file if available
+if filereadable("/etc/vim/vimrc.local")
+  source /etc/vim/vimrc.local
+endif
+
+inoremap {<CR> {<CR><END><CR>}<UP><END>
+
+inoremap qq  <ESC>
+
