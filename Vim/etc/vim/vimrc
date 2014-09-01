@@ -10,6 +10,7 @@ endif
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
 
+set nu				" display line number
 set autoindent		" auto indentation
 set incsearch		" incremental search
 set nobackup		" no *~ backup files
@@ -17,7 +18,7 @@ set copyindent		" copy the previous indentation on autoindenting
 set ignorecase		" ignore case when searching
 set smartcase		" ignore case if search pattern is all lowercase,case-sensitive otherwise
 set smarttab		" insert tabs on the start of a line according to context
-set mouse=a		" Enable mouse usage (all modes)
+set mouse=a		    " Enable mouse usage (all modes)
 
 
 set nocompatible	" not compatible with the old-fashion vi mode
@@ -26,7 +27,7 @@ set history=50		" keep 50 lines of command line history
 set ruler		    " show the cursor position all the time
 set autoread		" auto read when file is changed from outside
 
-"set expandtab        "replace <TAB> with spaces
+set expandtab        "replace <TAB> with spaces
 set softtabstop=4 
 set shiftwidth=4 
 
@@ -42,4 +43,4 @@ endif
 inoremap {<CR> {<CR><END><CR>}<UP><END>
 
 inoremap qq  <ESC>
-
+let Tlist_Auto_Open = 1

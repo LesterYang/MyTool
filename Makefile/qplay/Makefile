@@ -10,14 +10,14 @@ HOST       =
 # Compiler
 CC         = $(HOST)gcc
 DEFINES    =
-CFLAGS     = -g -Wall $(DEFINES)
+CFLAGS     = -g3 -Wall $(DEFINES)
 INCPATH    = -I$(PREFIX)/usr/include -I. -I./include
 LINK       = $(HOST)gcc
 LIBPATH    = -L$(PREFIX)/usr/lib -L$(PREFIX)/lib
 RPATH      =
 RPATH_LINK = $(PREFIX)/usr/lib                   # search library for cross-compile
 LFLAGS     =                                     #-Wl,-rpath=$RPATH # -Wl,-rpath-link=$RPATH_LINK" 
-LIBS       = $(LIBPATH) -lpthread
+LIBS       = $(LIBPATH) -lasound
 AR         = $(HOST)ar
 SED        = sed
 
