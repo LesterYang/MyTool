@@ -32,29 +32,29 @@ set expandtab        "replace <TAB> with spaces
 set softtabstop=4 
 set shiftwidth=4 
 
-hi User1 ctermfg=15    ctermbg=28 
-hi User2 ctermfg=28    ctermbg=19 
-hi User3 ctermfg=15    ctermbg=19 
-hi User4 ctermfg=19    ctermbg=54 
-hi User5 ctermfg=15    ctermbg=54
-hi User6 ctermfg=54    ctermbg=240 
-hi User7 ctermfg=15    ctermbg=240
-hi User8 ctermfg=255   ctermbg=240
-hi User9 ctermfg=000   ctermbg=255
+hi User1 ctermfg=15    ctermbg=21 
+     hi User2 ctermfg=21    ctermbg=27 
+hi User3 ctermfg=15    ctermbg=27 
+     hi User4 ctermfg=27    ctermbg=33 
+hi User5 ctermfg=15    ctermbg=33
+     hi User6 ctermfg=33    ctermbg=45 
+hi User7 ctermfg=0    ctermbg=45
+hi User8 ctermfg=0    ctermbg=49
+
 
 set laststatus=2
 "set statusline=%<%f\ %m%=\ %h%r\ %-19([%p%%]\ %3l,%02c%03V%)%y
 "set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set statusline=%<%1*
 set statusline+=%t\ 
-set statusline+=%2*▶%3*
-set statusline+=%h%m%r
-set statusline+=%4*▶%5*
-set statusline+=%{fugitive#statusline()}
-set statusline+=%6*▶%7*
-set statusline+=%=%-14.(%l,%c%V%)\ 
-set statusline+=%8*◀%9*
-set statusline+=%P
+set statusline+=%2*▶\ %3*
+set statusline+=%h%m%r\ 
+set statusline+=%4*▶\ %5*
+set statusline+=%{fugitive#statusline()}\ 
+set statusline+=%6*▶\ %7*
+set statusline+=%=%-12.(%l,%c%V%)
+set statusline+=%8*
+set statusline+=\ %P
 
 highlight StatusLine term=bold,reverse cterm=bold,reverse
 
