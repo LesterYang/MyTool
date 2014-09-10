@@ -7,7 +7,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "twilight"
+let colors_name = "qsicol"
 
 if version >= 700
   hi CursorLine guibg=#182028
