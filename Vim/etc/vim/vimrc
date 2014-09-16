@@ -73,6 +73,12 @@ endif
 inoremap {<CR> {<CR><END><CR>}<UP><END>
 imap .. .<C-X><C-O>
 imap -- -><C-X><C-O>
+
+"imap <C-h> <LEFT>
+"imap <C-j> <DOWN>
+"imap <C-k> <UP>
+"imap <C-l> <RIGHT>
+
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
@@ -104,7 +110,10 @@ cnoremap <C-A>      <Home>
 cnoremap <C-E>      <End>
 cnoremap <C-K>      <C-U>
 
-
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 """""""""""""""""
 " taglist plugin
@@ -114,10 +123,19 @@ let Tlist_Show_One_File = 1
 let Tlist_Auto_Open = 1
 let Tlist_Auto_Update = 1
 let Tlist_Exit_OnlyWindow = 1
+let Tlist_WinWidth = 24
 
-"""""""""""""""""
+""""""""""""""""""
+" NerdTree plugin
+""""""""""""""""""
+nnoremap <silent> <F5> :NERDTree<CR> 
+let NERDTreeWinPos="right"
+let NERDTreeWinSize=24
+"let NERDTreeShowBookmarks=1
+
+""""""""""""""""""
 " OmniCppComplete
-"""""""""""""""""
+""""""""""""""""""
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1
@@ -126,4 +144,6 @@ let OmniCpp_MayCompleteDot = 1                          " autocomplete after .
 let OmniCpp_MayCompleteArrow = 1                        " autocomplete after ->
 let OmniCpp_MayCompleteScope = 1                        " autocomplete after ::
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+
+
 
