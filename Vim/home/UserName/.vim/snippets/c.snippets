@@ -108,3 +108,21 @@ snippet .
 	[${1}]${2}
 snippet un
 	unsigned
+# Description
+snippet des
+	/*
+	 *  `Filename()`.c
+	 *  Copyright `&enc[:2] == "utf" ? "©" : "(c)"` `strftime("%Y")` QSI Inc.
+	 *  All rights reserved.
+	 *  
+	 *       Author : Lester Yang <lester.yang@qsitw.com>
+	 *  Description : ${1}
+	 */
+	 ${2}
+# define header
+snippet hdr
+	#ifndef ${1:`Filename('$1', "_H")`}
+	#define ${2:$1}
+	${4}
+	#endif /* ${3:$1} */
+
