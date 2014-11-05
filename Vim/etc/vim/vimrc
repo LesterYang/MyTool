@@ -5,7 +5,7 @@ if has("autocmd")
   filetype plugin indent on
 endif
 
-set nu			" display line number
+set nu			    " display line number
 set autoindent		" auto indentation
 set incsearch		" incremental search
 set hlsearch		" search highlightin
@@ -14,16 +14,16 @@ set copyindent		" copy the previous indentation on autoindenting
 set ignorecase		" ignore case when searching
 set smartcase		" ignore case if search pattern is all lowercase,case-sensitive otherwise
 set smarttab		" insert tabs on the start of a line according to context
-set mouse=a		" Enable mouse usage (all modes)
+set mouse=a		    " Enable mouse usage (all modes)
 set nocompatible	" not compatible with the old-fashion vi mode
-set bs=2		" allow backspacing over everything in insert mode
+set bs=2		    " allow backspacing over everything in insert mode
 set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
+set ruler		    " show the cursor position all the time
 set autoread		" auto read when file is changed from outside
-set expandtab           "replace <TAB> with spaces
+set expandtab       "replace <TAB> with spaces
 set softtabstop=4 
 set shiftwidth=4 
-
+set tags+=~/.vim/systags "add system tags
 
 """""""""""""""
 " color scheme
@@ -71,26 +71,21 @@ endif
 " remap
 """"""""
 inoremap {<CR> {<CR><END><CR>}<UP><END>
-imap .. .<C-X><C-O>
-imap -- -><C-X><C-O>
-
-"imap <C-h> <LEFT>
-"imap <C-j> <DOWN>
-"imap <C-k> <UP>
-"imap <C-l> <RIGHT>
+"imap .. .<C-X><C-O>
+"imap -- -><C-X><C-O>
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
-
 let mapleader=","
 let g:mapleader=","
 
-map <leader>cc :botright cope<CR>                            " open the error console
-map <leader>] :cn<CR>                                        " move to next error
-map <leader>[ :cp<CR>                                        " move to the prev error
-nmap <leader>/ :nohl<CR>                                     " ,/ turn off search highlighting
-nmap <leader>h :UpdateTypesFile<CR>                          " update taghighlight
+map <leader>cc :botright cope<CR>                       " open the error console
+map <leader>]  :cn<CR>                                  " move to next error
+map <leader>[  :cp<CR>                                  " move to the prev error
+nmap <leader>/ :nohl<CR>                                " turn off search highlighting
+nmap <leader>h :UpdateTypesFile<CR>                     " update taghighlight
+nmap <leader>s :w<CR>                                   " save  
 
 fun! Replace() 
     let s:word = input("Replace " . expand('<cword>') . " with:") 
@@ -104,16 +99,23 @@ map <leader>r :call Replace()<CR>
 " ,g search recursively
 map <leader>g :vimgrep //j **<left><left><left><left><left>
 
-inoremap <C-A>      <Home>
-inoremap <C-E>      <End>
-cnoremap <C-A>      <Home>
-cnoremap <C-E>      <End>
-cnoremap <C-K>      <C-U>
+inoremap <C-A> <Home>
+inoremap <C-E> <End>
+inoremap <C-h> <LEFT>
+inoremap <C-j> <DOWN>
+inoremap <C-k> <UP>
+inoremap <C-l> <RIGHT>
+inoremap <C-f> <PageDown>
+inoremap <C-b> <PageUP>
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+cnoremap <C-K> <C-U>
 
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
 
 """""""""""""""""
 " taglist plugin
@@ -145,5 +147,10 @@ let OmniCpp_MayCompleteArrow = 1                        " autocomplete after ->
 let OmniCpp_MayCompleteScope = 1                        " autocomplete after ::
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
-
+""""""""""""""""""
+" EasyMotion
+""""""""""""""""""
+let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz'
+let g:EasyMotion_do_shade = 1
+let g:EasyMotion_leader_key = '<Leader>'
 
