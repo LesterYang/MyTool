@@ -3,13 +3,13 @@
 # Author: Lester
 #############################
 
+MAJOR      = 1
+VERSION    = $(MAJOR).2.6
+
 # cross-compile : set PREFIX and PATH
 PREFIX     = /Space/ltib2/ltib/rootfs_l
 CC_PATH    = /opt/freescale/usr/local/gcc-4.6.2-glibc-2.13-linaro-multilib-2011.12/fsl-linaro-toolchain/bin/
 CROSS      = arm-linux-
-
-MAJOR      = 1
-VERSION    = $(MAJOR).2.6
 
 
 # Compiler
