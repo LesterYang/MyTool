@@ -122,7 +122,7 @@ nnoremap <C-l> <C-w>l
 """""""""""""""""
 nnoremap <silent> <F4> :TlistToggle<CR> 
 let Tlist_Show_One_File = 1
-let Tlist_Auto_Open = 1
+let Tlist_Auto_Open = 0
 let Tlist_Auto_Update = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_WinWidth = 24
@@ -131,7 +131,7 @@ let Tlist_WinWidth = 24
 " NerdTree plugin
 """"""""""""""""""
 nnoremap <silent> <F5> :NERDTree<CR> 
-let NERDTreeWinPos="right"
+let NERDTreeWinPos="left"
 let NERDTreeWinSize=24
 "let NERDTreeShowBookmarks=1
 
@@ -154,3 +154,4 @@ let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz'
 let g:EasyMotion_do_shade = 1
 let g:EasyMotion_leader_key = '<Leader>'
 
+au VimEnter *  NERDTree
