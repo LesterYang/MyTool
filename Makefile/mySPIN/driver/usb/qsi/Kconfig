@@ -1,0 +1,16 @@
+#
+# QSI USB driver configuration
+#
+
+menu "QSI USB Drivers"
+
+config QSI_USB
+     bool "qsi usb driver"
+
+config QSI_MYSPIN_USB
+     tristate "mySPIN usb driver"
+     depends on QSI_USB
+     help
+        Support for mySPIN usb control
+
+endmenu
