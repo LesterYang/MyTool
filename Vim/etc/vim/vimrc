@@ -5,7 +5,7 @@ if has("autocmd")
   filetype plugin indent on
 endif
 
-set nu			" display line number
+set nu			    " display line number
 set autoindent		" auto indentation
 set incsearch		" incremental search
 set hlsearch		" search highlightin
@@ -24,6 +24,7 @@ set expandtab           "replace <TAB> with spaces
 set softtabstop=4 
 set shiftwidth=4 
 set tags+=~/.vim/systags "add system tags
+set fileencodings=utf-8,gbk,ucs-bom,cp936
 
 """""""""""""""
 " color scheme
@@ -49,7 +50,7 @@ set laststatus=2
 set statusline=%<%1*
 set statusline+=\ %t\ 
 set statusline+=%2*▶\ %3*
-set statusline+=%h%m%r\ 
+set statusline+=%h%m%r[%{&encoding}]\ 
 set statusline+=%4*▶\ %5*
 set statusline+=%{fugitive#statusline()}\ 
 set statusline+=%6*▶\ %7*
