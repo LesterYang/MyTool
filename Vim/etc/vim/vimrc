@@ -50,11 +50,11 @@ set laststatus=2
 set statusline=%<%1*
 set statusline+=\ %t\ 
 set statusline+=%2*▶\ %3*
-set statusline+=%h%m%r[%{&encoding}]\ 
+set statusline+=%h%m%r\ 
 set statusline+=%4*▶\ %5*
 set statusline+=%{fugitive#statusline()}\ 
 set statusline+=%6*▶\ %7*
-set statusline+=%=%-12.(%l,%c%V%)
+set statusline+=%=%-14.(%l,%c%V%)[%{&encoding}]
 set statusline+=%8*
 set statusline+=\ %P
 hi StatusLine term=bold,reverse cterm=bold,reverse
