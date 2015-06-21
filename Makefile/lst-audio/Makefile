@@ -22,16 +22,16 @@ LIBPATH    = -L$(PREFIX)/usr/lib -L$(PREFIX)/usr/local/lib -L$(PREFIX)/lib
 RPATH      =
 RPATH_LINK = $(PREFIX)/usr/lib
 LFLAGS     = -Wl,-rpath-link=$(RPATH_LINK)
-LIBS       = $(LIBPATH) -lm -ldl -lpthread -lasound -lQSI-IPCLib -lprofiler
+LIBS       = $(LIBPATH) -lm -ldl -lpthread -lasound -lprofiler
 AR         = $(HOST)ar
 OBJ_PATH   = $(DEST_PATH)/.obj
 
 OBJECTS    = $(shell ls ./src/*.c | sed 's/\.c/.o/g')
     		 
 # All Target
-all: qsi-audio move
+all: lst-audio move
 
-qsi-audio: $(OBJECTS)
+lst-audio: $(OBJECTS)
 	@echo 'Building target: $@'
 	$(CC) -o $@ $(OBJECTS) $(LFLAGS) $(LIBS)  
 
@@ -39,7 +39,7 @@ $(OBJECTS): %.o: %.c
 	$(CC) -c $(CFLAGS) $(INCPATH) $< -o $@
 		
 move:
-	mv qsi-audio $(DEST_PATH)
+	mv lst-audio $(DEST_PATH)
 	mv $(OBJECTS) $(OBJ_PATH)
 	sync
 	

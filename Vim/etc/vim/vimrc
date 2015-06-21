@@ -32,7 +32,7 @@ set fileencodings=utf-8,gbk,ucs-bom,cp936
 set t_Co=256
 syntax on
 set background=dark
-colorscheme qsicol
+colorscheme lstcol
 
 """"""""""""""
 " status line
