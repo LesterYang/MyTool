@@ -14,13 +14,14 @@ set copyindent		" copy the previous indentation on autoindenting
 set ignorecase		" ignore case when searching
 set smartcase		" ignore case if search pattern is all lowercase,case-sensitive otherwise
 set smarttab		" insert tabs on the start of a line according to context
+set showtabline=0
 set mouse=a	        " Enable mouse usage (all modes)
 set nocompatible	" not compatible with the old-fashion vi mode
 set bs=2	        " allow backspacing over everything in insert mode
 set history=50		" keep 50 lines of command line history
 set ruler	        " show the cursor position all the time
 set autoread		" auto read when file is changed from outside
-set expandtab           "replace <TAB> with spaces
+set expandtab           " replace <TAB> with spaces
 set softtabstop=4 
 set shiftwidth=4 
 set tags+=~/.vim/systags "add system tags
@@ -31,8 +32,9 @@ set fileencodings=utf-8,gbk,ucs-bom,cp936
 """""""""""""""
 set t_Co=256
 syntax on
-set background=dark
-colorscheme lstcol
+"set background=dark
+"colorscheme qsicol
+colorscheme molokai
 
 """"""""""""""
 " status line
@@ -67,6 +69,8 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
+let g:Tb_MaxSize=2
+let g:Tb_TabWrap=1
 
 """"""""
 " remap
@@ -87,7 +91,7 @@ map <leader>cc :botright cope<CR>                       " open the error console
 map <leader>]  :cn<CR>                                  " move to next error
 map <leader>[  :cp<CR>                                  " move to the prev error
 nmap <leader>/ :nohl<CR>                                " turn off search highlighting
-nmap <leader>h :UpdateTypesFile<CR>                     " update taghighlight
+"nmap <leader>h :UpdateTypesFile<CR>                     " update taghighlight
 nmap <leader>s :w<CR>                                   " save  
 
 fun! Replace() 
@@ -123,20 +127,22 @@ nnoremap <C-l> <C-w>l
 """""""""""""""""
 " taglist plugin
 """""""""""""""""
-nnoremap <silent> <F4> :TlistToggle<CR> 
-let Tlist_Show_One_File = 1
-let Tlist_Auto_Open = 1
-let Tlist_Auto_Update = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_WinWidth = 24
+"nnoremap <silent> <F4> :TlistToggle<CR> 
+"let Tlist_Show_One_File = 1
+"let Tlist_Auto_Open = 1
+"let Tlist_Auto_Update = 1
+"let Tlist_Exit_OnlyWindow = 1
+"let Tlist_WinWidth = 24
 
 """"""""""""""""""
 " NerdTree plugin
 """"""""""""""""""
-nnoremap <silent> <F5> :NERDTree<CR> 
-let NERDTreeWinPos="right"
+nnoremap <silent> <F4> :NERDTree<CR> 
+let NERDTreeWinPos="left"
 let NERDTreeWinSize=24
-"let NERDTreeShowBookmarks=1
+let NERDTreeShowBookmarks=1
+
+"au VimEnter *  NERDTree
 
 """"""""""""""""""
 " OmniCppComplete
@@ -153,8 +159,21 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 """"""""""""""""""
 " EasyMotion
 """"""""""""""""""
-let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz'
+let g:EasyMotion_keys = 'asdfghjkl'
 let g:EasyMotion_do_shade = 1
 let g:EasyMotion_leader_key = '<Leader>'
 
-au VimEnter *  NERDTree
+""""""""""""""""""
+" Tagbar
+""""""""""""""""""
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_left=1
+let g:tagbar_autoclose=1
+let g:tagbar_expand=1
+let g:tagbar_width=24
+
+""""""""""""""""""
+" Cscope
+""""""""""""""""""
+"map <F5> :!cscope -Rbq &<CR>:cs reset<CR><CR>
+map <F5> :!~/.vim/cscope_update &<CR>:cs reset<CR><CR>
